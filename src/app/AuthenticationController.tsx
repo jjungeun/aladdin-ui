@@ -20,8 +20,8 @@ import JaegerInfo from '../types/JaegerInfo';
 
 interface AuthenticationControllerReduxProps {
   authenticated: boolean;
-  setGrafanaInfo: (grafanaInfo: GrafanaInfo) => void;
-  setJaegerInfo: (jaegerInfo: JaegerState) => void;
+  setGrafanaInfo: (grafanaInfo: GrafanaInfo | null) => void;
+  setJaegerInfo: (jaegerInfo: JaegerState | null) => void;
   setServerStatus: (serverStatus: ServerStatus) => void;
   setMeshTlsStatus: (meshStatus: TLSStatus) => void;
 }
@@ -106,8 +106,9 @@ class AuthenticationController extends React.Component<AuthenticationControllerP
       const getGrafanaInfoPromise = API.getGrafanaInfo()
         .then(response => this.props.setGrafanaInfo(response.data))
         .catch(error => {
+          this.props.setGrafanaInfo(null);
           MessageCenter.add(
-            API.getErrorMsg('Could not fetch Grafana info. Turning off links to Grafana.', error),
+            API.getInfoMsg('Could not fetch Grafana info. Turning off links to Grafana.', error),
             'default',
             MessageType.INFO
           );
@@ -115,24 +116,19 @@ class AuthenticationController extends React.Component<AuthenticationControllerP
       const getJaegerInfoPromise = API.getJaegerInfo()
         .then(response => this.setJaegerInfo(response.data))
         .catch(error => {
+          this.props.setJaegerInfo(null);
           MessageCenter.add(
-            API.getErrorMsg('Could not fetch Jaeger info. Turning off Jaeger integration.', error),
+            API.getInfoMsg('Could not fetch Jaeger info. Turning off Jaeger integration.', error),
             'default',
             MessageType.INFO
           );
-        });
-      const getMeshTlsPromise = API.getMeshTls()
-        .then(response => this.props.setMeshTlsStatus(response.data))
-        .catch(error => {
-          MessageCenter.add(API.getErrorMsg('Error fetching TLS Info.', error), 'default', MessageType.WARNING);
         });
 
       const configs = await Promise.all([
         API.getServerConfig(),
         getStatusPromise,
         getGrafanaInfoPromise,
-        getJaegerInfoPromise,
-        getMeshTlsPromise
+        getJaegerInfoPromise
       ]);
       setServerConfig(configs[0].data);
 

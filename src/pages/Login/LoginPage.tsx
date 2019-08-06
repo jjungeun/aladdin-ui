@@ -197,7 +197,7 @@ export class LoginPage extends React.Component<LoginProps, LoginState> {
         brandImgAlt="Kiali logo"
         footerListItems={listItem}
         textContent="Service Mesh Observability."
-        loginTitle="Log in Kiali"
+        loginTitle="Log in Aladdin"
       >
         {authenticationConfig.strategy === AuthStrategy.login ? (
           loginForm

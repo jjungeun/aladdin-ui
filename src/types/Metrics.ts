@@ -4,6 +4,10 @@ export interface Metrics {
   metrics: { [key: string]: MetricGroup };
   histograms: { [key: string]: Histogram };
 }
+// aladdin
+export interface InfraMetrics {
+  metrics: { [key: string]: MetricGroup };
+}
 
 export type Histogram = { [key: string]: MetricGroup };
 

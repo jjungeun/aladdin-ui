@@ -18,8 +18,9 @@ exports[`HealthIndicator renders healthy 1`] = `
                 "children": Array [
                   Object {
                     "status": Object {
+                      "class": "icon-healthy",
                       "color": "#3f9c35",
-                      "icon": "ok",
+                      "icon": [Function],
                       "name": "Healthy",
                       "priority": 1,
                     },
@@ -27,8 +28,9 @@ exports[`HealthIndicator renders healthy 1`] = `
                   },
                   Object {
                     "status": Object {
+                      "class": "icon-healthy",
                       "color": "#3f9c35",
-                      "icon": "ok",
+                      "icon": [Function],
                       "name": "Healthy",
                       "priority": 1,
                     },
@@ -36,8 +38,9 @@ exports[`HealthIndicator renders healthy 1`] = `
                   },
                 ],
                 "status": Object {
+                  "class": "icon-healthy",
                   "color": "#3f9c35",
-                  "icon": "ok",
+                  "icon": [Function],
                   "name": "Healthy",
                   "priority": 1,
                 },
@@ -47,28 +50,31 @@ exports[`HealthIndicator renders healthy 1`] = `
                 "children": Array [
                   Object {
                     "status": Object {
+                      "class": "icon-na",
                       "color": "#72767b",
+                      "icon": [Function],
                       "name": "No health information",
                       "priority": 0,
-                      "text": "N/A",
                     },
                     "text": "Inbound: No requests",
                   },
                   Object {
                     "status": Object {
+                      "class": "icon-na",
                       "color": "#72767b",
+                      "icon": [Function],
                       "name": "No health information",
                       "priority": 0,
-                      "text": "N/A",
                     },
                     "text": "Outbound: No requests",
                   },
                 ],
                 "status": Object {
+                  "class": "icon-na",
                   "color": "#72767b",
+                  "icon": [Function],
                   "name": "No health information",
                   "priority": 0,
-                  "text": "N/A",
                 },
                 "title": "Error Rate over last 10m",
               },
@@ -92,16 +98,11 @@ exports[`HealthIndicator renders healthy 1`] = `
     ]
   }
 >
-  <Icon
-    className="health-icon"
-    name="ok"
-    style={
-      Object {
-        "fontSize": "18px",
-      }
-    }
-    tabIndex="0"
-    type="pf"
+  <OkIcon
+    className="icon-healthy"
+    color="#3f9c35"
+    size="sm"
+    title={null}
   />
 </OverlayTrigger>
 `;

@@ -52,7 +52,7 @@ export class RateTableHttp extends React.Component<RateTableHttpPropType, {}> {
     const errRate: number = this.props.rate4xx + this.props.rate5xx;
     const percentErr: number = this.props.rate === 0 ? 0 : (errRate / this.props.rate) * 100;
     const successErr: number = 100 - percentErr;
-
+    
     // for the graph
     const rate2xx: number =
       this.props.rate === 0 ? 0 : this.props.rate - this.props.rate3xx - this.props.rate4xx - this.props.rate5xx;
@@ -67,7 +67,7 @@ export class RateTableHttp extends React.Component<RateTableHttpPropType, {}> {
         <table className="table">
           <thead>
             <tr>
-              <th>Total</th>
+              <th>Total</th> 
               <th>%Success</th>
               <th>%Error</th>
             </tr>

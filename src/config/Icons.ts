@@ -10,6 +10,7 @@ const mutIcons = {
   },
   menu: {
     overview: 'fa fa-tachometer',
+    dashboard: 'fa fa-tachometer',  // aladdin
     graph: 'fa pficon-topology',
     applications: 'fa pficon-applications',
     workloads: 'fa pficon-bundle',

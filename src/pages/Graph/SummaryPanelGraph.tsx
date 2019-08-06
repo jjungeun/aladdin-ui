@@ -142,6 +142,7 @@ export default class SummaryPanelGraph extends React.Component<SummaryPanelPropT
       reporter: 'destination'
     };
     const promiseHTTP = API.getNamespaceMetrics(props.namespaces[0].name, options);
+
     // TCP metrics are only available for reporter="source"
     const optionsTCP: IstioMetricsOptions = {
       filters: ['tcp_sent', 'tcp_received'],

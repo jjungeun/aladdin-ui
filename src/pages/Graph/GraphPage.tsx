@@ -22,6 +22,7 @@ import GraphLegend from '../../components/GraphFilter/GraphLegend';
 import StatefulTour from '../../components/Tour/StatefulTour';
 import EmptyGraphLayoutContainer from '../../components/EmptyGraphLayout';
 import SummaryPanel from './SummaryPanel';
+import { MyTablePage } from './MyTablePage';
 import graphHelp from './GraphHelpTour';
 import { arrayEquals } from '../../utils/Common';
 import { getFocusSelector, isKioskMode } from '../../utils/SearchParamUtils';
@@ -111,10 +112,22 @@ const cytoscapeGraphContainerStyle = style({ flex: '1', minWidth: '350px', zInde
 const cytoscapeGraphWrapperDivStyle = style({ position: 'relative' });
 const cytoscapeToolbarWrapperDivStyle = style({
   position: 'absolute',
-  bottom: '10px',
+  bottom: '27%',
   left: '-13px',
   zIndex: 2,
-  boxShadow: '2px 2px 6px 0 grey'
+  boxShadow: '2px 2px 6px 0 grey',
+});
+ 
+const cytoscapeTableWrapperDivStyle = style({
+  position: 'absolute',
+  width: '101%',
+  height: '25%',
+  bottom: '10px',
+  left: '-13px',
+  fontSize: '12px',
+  overflow: 'scroll',
+  display: 'block',
+  zIndex: 1,
 });
 
 const graphToolbarStyle = style({
@@ -331,26 +344,41 @@ export class GraphPage extends React.Component<GraphPageProps, GraphPageState> {
             <GraphFilterContainer disabled={this.props.isLoading} onRefresh={this.handleRefreshClick} />
           </div>
           <FlexView grow={true} className={cytoscapeGraphWrapperDivStyle}>
-            <ErrorBoundary
-              ref={this.errorBoundaryRef}
-              onError={this.notifyError}
-              fallBackComponent={<GraphErrorBoundaryFallback />}
-            >
+          <ErrorBoundary
+               ref={this.errorBoundaryRef}
+               onError={this.notifyError}
+               fallBackComponent={<GraphErrorBoundaryFallback />}
+          >
+
               <CytoscapeGraphContainer
-                refresh={this.handleRefreshClick}
-                containerClassName={cytoscapeGraphContainerStyle}
-                ref={refInstance => this.setCytoscapeGraph(refInstance)}
-                isMTLSEnabled={this.props.mtlsEnabled}
-                focusSelector={focusSelector}
-                contextMenuNodeComponent={NodeContextMenuContainer}
-                contextMenuGroupComponent={NodeContextMenuContainer}
+               refresh={this.handleRefreshClick}
+               containerClassName={cytoscapeGraphContainerStyle}
+               ref={refInstance => this.setCytoscapeGraph(refInstance)}
+               isMTLSEnabled={this.props.mtlsEnabled}
+               focusSelector={focusSelector}
+               contextMenuNodeComponent={NodeContextMenuContainer}
+               contextMenuGroupComponent={NodeContextMenuContainer}
               />
-              {this.props.graphData.nodes && Object.keys(this.props.graphData.nodes).length > 0 && !this.props.isError && (
-                <div className={cytoscapeToolbarWrapperDivStyle}>
-                  <CytoscapeToolbarContainer cytoscapeGraphRef={this.cytoscapeGraphRef} />
-                </div>
-              )}
-            </ErrorBoundary>
+             {/* benjykim */}
+             {this.props.summaryData && this.props.graphData.nodes && Object.keys(this.props.graphData.nodes).length > 0 && !this.props.isError && (
+               <>
+                 <div className={cytoscapeToolbarWrapperDivStyle}>
+                   <CytoscapeToolbarContainer cytoscapeGraphRef={this.cytoscapeGraphRef} />
+                 </div>
+                 <div className={cytoscapeTableWrapperDivStyle}>
+                   <MyTablePage
+                     data={this.props.summaryData}
+                     namespaces={this.props.activeNamespaces}
+                     graphType={this.props.graphType}
+                     injectServiceNodes={this.props.showServiceNodes}
+                     queryTime={this.props.graphTimestamp}
+                     duration={this.props.graphDuration}
+                     {...computePrometheusRateParams(this.props.duration, NUMBER_OF_DATAPOINTS)}
+                   />
+                 </div>
+               </>
+             )}
+          </ErrorBoundary>
             {this.props.summaryData && (
               <SummaryPanel
                 data={this.props.summaryData}

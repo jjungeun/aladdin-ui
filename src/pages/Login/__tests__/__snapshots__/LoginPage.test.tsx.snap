@@ -31,7 +31,7 @@ exports[`#LoginPage render correctly should render LoginPage 1`] = `
   }
   footerListVariants="inline"
   forgotCredentials={null}
-  loginTitle="Log in Kiali"
+  loginTitle="Log in Aladdin"
   signUpForAccountMessage={null}
   socialMediaLoginContent={null}
   textContent="Service Mesh Observability."

@@ -1,3 +1,5 @@
+import { ErrorCircleOIcon, WarningTriangleIcon, OkIcon, UnknownIcon } from '@patternfly/react-icons';
+import { IconType } from '@patternfly/react-icons/dist/js/createIcon';
 import { PfColors } from '../components/Pf/PfColors';
 import { getName } from '../utils/RateIntervals';
 
@@ -30,33 +32,37 @@ export interface Status {
   name: string;
   color: string;
   priority: number;
-  icon?: string;
-  text?: string;
+  icon: IconType;
+  class: string;
 }
 
 export const FAILURE: Status = {
   name: 'Failure',
   color: PfColors.Red100,
   priority: 3,
-  icon: 'error-circle-o'
+  icon: ErrorCircleOIcon,
+  class: 'icon-failure'
 };
 export const DEGRADED: Status = {
   name: 'Degraded',
   color: PfColors.Orange400,
   priority: 2,
-  icon: 'warning-triangle-o'
+  icon: WarningTriangleIcon,
+  class: 'icon-degraded'
 };
 export const HEALTHY: Status = {
   name: 'Healthy',
   color: PfColors.Green400,
   priority: 1,
-  icon: 'ok'
+  icon: OkIcon,
+  class: 'icon-healthy'
 };
 export const NA: Status = {
   name: 'No health information',
   color: PfColors.Gray,
   priority: 0,
-  text: 'N/A'
+  icon: UnknownIcon,
+  class: 'icon-na'
 };
 
 interface Thresholds {

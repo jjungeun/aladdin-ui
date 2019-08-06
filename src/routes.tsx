@@ -7,6 +7,8 @@ import WorkloadDetailsPage from './pages/WorkloadDetails/WorkloadDetailsPage';
 import AppListPage from './pages/AppList/AppListPage';
 import AppDetailsPage from './pages/AppDetails/AppDetailsPage';
 import OverviewPageContainer from './pages/Overview/OverviewPage';
+// aladdin
+import DashboardPageContainer from './pages/DashBoard/DashBoardPage';
 import { MenuItem, Path } from './types/Routes';
 import GraphPageContainer from './pages/Graph/GraphPage';
 import { icons, Paths } from './config';
@@ -23,6 +25,13 @@ const navItems: MenuItem[] = [
     title: 'Overview',
     to: '/overview',
     pathsActive: [/^\/overview\/(.*)/]
+  },
+  // aladdin
+  {
+    iconClass: icons.menu.dashboard,
+    title: 'Dashboard',
+    to: '/dashboard',
+    pathsActive: [/^\/dashboard\/(.*)/]
   },
   {
     iconClass: icons.menu.graph,
@@ -67,6 +76,11 @@ const pathRoutes: Path[] = [
   {
     path: '/overview',
     component: OverviewPageContainer
+  },
+  // aladdin
+  {
+    path: '/dashboard',
+    component: DashboardPageContainer
   },
   {
     path: '/graph/node/namespaces/:namespace/' + Paths.APPLICATIONS + '/:app/versions/:version',
