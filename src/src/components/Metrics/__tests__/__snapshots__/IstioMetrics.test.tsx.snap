@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Inbound Metrics for a workload renders initial layout 1`] = `
+<Route
+  render={[Function]}
+/>
+`;
+
+exports[`Metrics for a service renders initial layout 1`] = `
+<MemoryRouter>
+  <Route
+    render={[Function]}
+  />
+</MemoryRouter>
+`;

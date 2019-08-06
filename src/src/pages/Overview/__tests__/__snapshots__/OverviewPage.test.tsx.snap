@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Overview page renders initial layout 1`] = `
+<Fragment>
+  <Breadcrumb
+    title={true}
+  >
+    <BreadcrumbItem
+      active={true}
+    >
+      Namespaces
+    </BreadcrumbItem>
+  </Breadcrumb>
+  <Connect(OverviewToolbar)
+    displayMode={1}
+    onError={[Function]}
+    onRefresh={[Function]}
+    setDisplayMode={[Function]}
+    sort={[Function]}
+  />
+  <EmptyState
+    className="f1txr8of"
+  >
+    <EmptyStateTitle
+      className=""
+    >
+      No unfiltered namespaces
+    </EmptyStateTitle>
+    <EmptyStateInfo
+      className=""
+    >
+      Either all namespaces are being filtered or the user has no permission to access namespaces.
+    </EmptyStateInfo>
+  </EmptyState>
+</Fragment>
+`;

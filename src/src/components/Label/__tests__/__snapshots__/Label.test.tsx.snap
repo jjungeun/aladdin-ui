@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#Badge render correctly with data should render badge 1`] = `
+<span
+  className="label-pair"
+>
+  <Label
+    bsStyle="primary"
+    className="label-key"
+    type="default"
+  >
+    app
+  </Label>
+  <Label
+    bsStyle="primary"
+    className="label-value"
+    type="default"
+  >
+    bookinfo
+  </Label>
+</span>
+`;

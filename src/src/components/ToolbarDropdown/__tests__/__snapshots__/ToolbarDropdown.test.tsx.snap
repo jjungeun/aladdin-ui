@@ -1,0 +1,507 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToolbarDropdown Render correctly all dropdowns 1`] = `
+<Fragment>
+  <label
+    style={
+      Object {
+        "paddingRight": "0.5em",
+      }
+    }
+  >
+    graph_filter_interval_duration
+  </label>
+  <DropdownButton
+    disabled={false}
+    id="graph_filter_interval_duration"
+    onSelect={[Function]}
+    onToggle={[Function]}
+    title="Last 1m"
+  >
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="60"
+      header={false}
+      key="60"
+    >
+      Last 1m
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="300"
+      header={false}
+      key="300"
+    >
+      Last 5m
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="600"
+      header={false}
+      key="600"
+    >
+      Last 10m
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="1800"
+      header={false}
+      key="1800"
+    >
+      Last 30m
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="3600"
+      header={false}
+      key="3600"
+    >
+      Last 1h
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="10800"
+      header={false}
+      key="10800"
+    >
+      Last 3h
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="21600"
+      header={false}
+      key="21600"
+    >
+      Last 6h
+    </MenuItem>
+  </DropdownButton>
+</Fragment>
+`;
+
+exports[`ToolbarDropdown Render correctly all dropdowns 2`] = `
+<Fragment>
+  <label
+    style={
+      Object {
+        "paddingRight": "0.5em",
+      }
+    }
+  >
+    metrics_filter_poll_interval
+  </label>
+  <DropdownButton
+    disabled={false}
+    id="metrics_filter_poll_interval"
+    onSelect={[Function]}
+    onToggle={[Function]}
+    title="Every 15s"
+  >
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="0"
+      header={false}
+      key="0"
+    >
+      Pause
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="10000"
+      header={false}
+      key="10000"
+    >
+      Every 10s
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="15000"
+      header={false}
+      key="15000"
+    >
+      Every 15s
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="30000"
+      header={false}
+      key="30000"
+    >
+      Every 30s
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="60000"
+      header={false}
+      key="60000"
+    >
+      Every 1m
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="300000"
+      header={false}
+      key="300000"
+    >
+      Every 5m
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="900000"
+      header={false}
+      key="900000"
+    >
+      Every 15m
+    </MenuItem>
+  </DropdownButton>
+</Fragment>
+`;
+
+exports[`ToolbarDropdown Render correctly all dropdowns 3`] = `
+<Fragment>
+  <label
+    style={
+      Object {
+        "paddingRight": "0.5em",
+      }
+    }
+  >
+    graph_filter_layouts
+  </label>
+  <DropdownButton
+    disabled={false}
+    id="graph_filter_layouts"
+    onSelect={[Function]}
+    onToggle={[Function]}
+    title="Cola"
+  >
+    <MenuItem
+      active={true}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="cola"
+      header={false}
+      key="cola"
+    >
+      Cola
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="cose-bilkent"
+      header={false}
+      key="cose-bilkent"
+    >
+      Cose
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="dagre"
+      header={false}
+      key="dagre"
+    >
+      Dagre
+    </MenuItem>
+  </DropdownButton>
+</Fragment>
+`;
+
+exports[`ToolbarDropdown Render dropdowns correctly with controlled values and labels 1`] = `
+<Fragment>
+  <label
+    style={
+      Object {
+        "paddingRight": "0.5em",
+      }
+    }
+  >
+    graph_filter_interval_duration
+  </label>
+  <DropdownButton
+    disabled={false}
+    id="graph_filter_interval_duration"
+    onSelect={[Function]}
+    onToggle={[Function]}
+    title="Last 1m"
+  >
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="60"
+      header={false}
+      key="60"
+    >
+      Last 1m
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="300"
+      header={false}
+      key="300"
+    >
+      Last 5m
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="600"
+      header={false}
+      key="600"
+    >
+      Last 10m
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="1800"
+      header={false}
+      key="1800"
+    >
+      Last 30m
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="3600"
+      header={false}
+      key="3600"
+    >
+      Last 1h
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="10800"
+      header={false}
+      key="10800"
+    >
+      Last 3h
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="21600"
+      header={false}
+      key="21600"
+    >
+      Last 6h
+    </MenuItem>
+  </DropdownButton>
+</Fragment>
+`;
+
+exports[`ToolbarDropdown Render dropdowns correctly with controlled values and labels 2`] = `
+<Fragment>
+  <label
+    style={
+      Object {
+        "paddingRight": "0.5em",
+      }
+    }
+  >
+    metrics_filter_poll_interval
+  </label>
+  <DropdownButton
+    disabled={false}
+    id="metrics_filter_poll_interval"
+    onSelect={[Function]}
+    onToggle={[Function]}
+    title="Every 15s"
+  >
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="0"
+      header={false}
+      key="0"
+    >
+      Pause
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="10000"
+      header={false}
+      key="10000"
+    >
+      Every 10s
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="15000"
+      header={false}
+      key="15000"
+    >
+      Every 15s
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="30000"
+      header={false}
+      key="30000"
+    >
+      Every 30s
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="60000"
+      header={false}
+      key="60000"
+    >
+      Every 1m
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="300000"
+      header={false}
+      key="300000"
+    >
+      Every 5m
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="900000"
+      header={false}
+      key="900000"
+    >
+      Every 15m
+    </MenuItem>
+  </DropdownButton>
+</Fragment>
+`;
+
+exports[`ToolbarDropdown Render dropdowns correctly with controlled values and labels 3`] = `
+<Fragment>
+  <label
+    style={
+      Object {
+        "paddingRight": "0.5em",
+      }
+    }
+  >
+    graph_filter_layouts
+  </label>
+  <DropdownButton
+    disabled={false}
+    id="graph_filter_layouts"
+    onSelect={[Function]}
+    onToggle={[Function]}
+    title="Cola"
+  >
+    <MenuItem
+      active={true}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="cola"
+      header={false}
+      key="cola"
+    >
+      Cola
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="cose-bilkent"
+      header={false}
+      key="cose-bilkent"
+    >
+      Cose
+    </MenuItem>
+    <MenuItem
+      active={false}
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      eventKey="dagre"
+      header={false}
+      key="dagre"
+    >
+      Dagre
+    </MenuItem>
+  </DropdownButton>
+</Fragment>
+`;

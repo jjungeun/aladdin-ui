@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TagsControls renders TagsControl correctly 1`] = `
+<Form
+  className=""
+  isHorizontal={true}
+>
+  <FormGroup
+    className=""
+    fieldId="jaeger-tags"
+    helperText={
+      <UNDEFINED>
+        <Popover
+          appendTo={[Function]}
+          aria-label=""
+          bodyContent={
+            <UNDEFINED>
+              Values should be in the
+               
+              <a
+                href="https://brandur.org/logfmt"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                logfmt
+              </a>
+               
+              format.
+              <ul>
+                <li>
+                  Use space for conjunctions
+                </li>
+                <li>
+                  Values containing whitespace should be enclosed in quotes
+                </li>
+              </ul>
+              <code>
+                error=true db.statement="select * from User"
+              </code>
+            </UNDEFINED>
+          }
+          className="f6vm0mb"
+          closeBtnAriaLabel="Close"
+          enableFlip={true}
+          footerContent={null}
+          headerContent={null}
+          hideOnOutsideClick={true}
+          isVisible={null}
+          maxWidth="calc(1.5rem + 18.75rem)"
+          onHidden={[Function]}
+          onHide={[Function]}
+          onMount={[Function]}
+          onShow={[Function]}
+          onShown={[Function]}
+          position="right"
+          shouldClose={[Function]}
+          zIndex={9999}
+        >
+          <UNDEFINED>
+            <Button
+              aria-label={null}
+              className=""
+              component="button"
+              isActive={false}
+              isBlock={false}
+              isDisabled={false}
+              isFocus={false}
+              isHover={false}
+              type="button"
+              variant="plain"
+            >
+              <InfoAltIcon
+                color="currentColor"
+                size="sm"
+                title={null}
+              />
+            </Button>
+            e.g. http.status_code=200 error=true
+          </UNDEFINED>
+        </Popover>
+      </UNDEFINED>
+    }
+    isInline={false}
+    isRequired={false}
+    isValid={true}
+    label="Tags"
+  >
+    <TextInput
+      aria-label="tagsJaegerTraces"
+      className="f6vm0mb"
+      isDisabled={false}
+      isReadOnly={false}
+      isRequired={false}
+      isValid={true}
+      onChange={[MockFunction]}
+      type="text"
+      value=""
+    />
+  </FormGroup>
+</Form>
+`;

@@ -1,0 +1,384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#ServiceInfo render correctly with data should render serviceInfo with data 1`] = `
+<div>
+  <div
+    className="container-fluid container-cards-pf"
+  >
+    <Row
+      bsClass="row"
+      className="row-cards-pf"
+      componentClass="div"
+    >
+      <Col
+        bsClass="col"
+        componentClass="div"
+        lg={12}
+        md={12}
+        sm={12}
+        xs={12}
+      >
+        <span
+          style={
+            Object {
+              "float": "right",
+            }
+          }
+        >
+          <Connect(class_1)
+            id="service-info-duration-dropdown"
+          />
+           
+          <Connect(RefreshButton)
+            handleRefresh={[MockFunction]}
+          />
+           
+          <IstioWizardDropdown
+            destinationRules={
+              Object {
+                "items": Array [
+                  Object {
+                    "metadata": Object {
+                      "creationTimestamp": "2018-07-02T13:44:01+02:00",
+                      "name": "reviews",
+                      "resourceVersion": "393061",
+                    },
+                    "spec": Object {
+                      "host": "reviews",
+                      "subsets": Array [
+                        Object {
+                          "labels": Object {
+                            "version": "v1",
+                          },
+                          "name": "v1",
+                        },
+                        Object {
+                          "labels": Object {
+                            "version": "v2",
+                          },
+                          "name": "v2",
+                        },
+                        Object {
+                          "labels": Object {
+                            "version": "v3",
+                          },
+                          "name": "v3",
+                        },
+                      ],
+                      "trafficPolicy": undefined,
+                    },
+                  },
+                ],
+                "permissions": Object {
+                  "create": false,
+                  "delete": false,
+                  "update": false,
+                },
+              }
+            }
+            gateways={Array []}
+            namespace="istio-system"
+            onChange={[MockFunction]}
+            serviceName="reviews"
+            show={false}
+            threeScaleInfo={
+              Object {
+                "enabled": false,
+                "permissions": Object {
+                  "create": false,
+                  "delete": false,
+                  "update": false,
+                },
+              }
+            }
+            virtualServices={
+              Object {
+                "items": Array [
+                  Object {
+                    "metadata": Object {
+                      "creationTimestamp": "2018-07-02T13:44:01+02:00",
+                      "name": "reviews",
+                      "resourceVersion": "393057",
+                    },
+                    "spec": Object {
+                      "gateways": undefined,
+                      "hosts": Array [
+                        "reviews",
+                      ],
+                      "http": Array [
+                        Object {
+                          "route": Array [
+                            Object {
+                              "destination": Object {
+                                "host": "reviews",
+                                "subset": "v1",
+                              },
+                            },
+                          ],
+                        },
+                      ],
+                      "tcp": undefined,
+                    },
+                  },
+                ],
+                "permissions": Object {
+                  "create": false,
+                  "delete": false,
+                  "update": false,
+                },
+              }
+            }
+            workloads={Array []}
+          />
+        </span>
+      </Col>
+    </Row>
+    <Row
+      bsClass="row"
+      className="row-cards-pf"
+      componentClass="div"
+    >
+      <Col
+        bsClass="col"
+        componentClass="div"
+        lg={12}
+        md={12}
+        sm={12}
+        xs={12}
+      >
+        <ServiceInfoDescription
+          createdAt="2018-06-29T16:43:18+02:00"
+          endpoints={
+            Array [
+              Object {
+                "addresses": Array [
+                  Object {
+                    "ip": "172.17.0.20",
+                    "kind": "Pod",
+                    "name": "reviews-v3-5f5bcb6765-hj46f",
+                  },
+                  Object {
+                    "ip": "172.17.0.21",
+                    "kind": "Pod",
+                    "name": "reviews-v2-d896b68c-jnxgm",
+                  },
+                  Object {
+                    "ip": "172.17.0.22",
+                    "kind": "Pod",
+                    "name": "reviews-v1-5d6696bcf7-2sls7",
+                  },
+                ],
+                "ports": Array [
+                  Object {
+                    "name": "http",
+                    "port": 9080,
+                    "protocol": "TCP",
+                  },
+                ],
+              },
+            ]
+          }
+          externalName="my.database.example.com"
+          ip="172.30.196.248"
+          istioEnabled={true}
+          labels={
+            Object {
+              "app": "reviews",
+            }
+          }
+          name="reviews"
+          namespace="istio-system"
+          ports={
+            Array [
+              Object {
+                "name": "http",
+                "port": 9080,
+                "protocol": "TCP",
+              },
+            ]
+          }
+          resourceVersion="2652"
+          type="ClusterIP"
+          validations={Object {}}
+        />
+      </Col>
+    </Row>
+    <Row
+      bsClass="row"
+      className="row-cards-pf"
+      componentClass="div"
+    >
+      <Col
+        bsClass="col"
+        componentClass="div"
+        lg={12}
+        md={12}
+        sm={12}
+        xs={12}
+      >
+        <Uncontrolled(TabContainer)
+          id="service-tabs"
+        >
+          <div>
+            <Nav
+              bsClass="nav nav-tabs nav-tabs-pf"
+              justified={false}
+              pullLeft={false}
+              pullRight={false}
+              stacked={false}
+            >
+              <NavItem
+                active={false}
+                disabled={false}
+                eventKey="workloads"
+              >
+                Workloads (0)
+              </NavItem>
+              <NavItem
+                active={false}
+                disabled={false}
+                eventKey="virtualservices"
+              >
+                Virtual Services (1)
+              </NavItem>
+              <NavItem
+                active={false}
+                disabled={false}
+                eventKey="destinationrules"
+              >
+                Destination Rules (1)
+                <span
+                  className="f1uxujqj"
+                >
+                   
+                  <Icon
+                    name="error-circle-o"
+                    type="pf"
+                  />
+                </span>
+              </NavItem>
+            </Nav>
+            <TabContent
+              animation={true}
+              bsClass="tab"
+              componentClass="div"
+              mountOnEnter={false}
+              unmountOnExit={false}
+            >
+              <WithErrorBoundary
+                eventKey="workloads"
+                message="One of the Workloads associated to this service has an invalid format"
+              >
+                <ServiceInfoWorkload
+                  namespace="istio-system"
+                  workloads={Array []}
+                />
+              </WithErrorBoundary>
+              <WithErrorBoundary
+                eventKey="virtualservices"
+                message="One of the Virtual Services associated to this service has an invalid format"
+              >
+                <ServiceInfoVirtualServices
+                  virtualServices={
+                    Array [
+                      Object {
+                        "metadata": Object {
+                          "creationTimestamp": "2018-07-02T13:44:01+02:00",
+                          "name": "reviews",
+                          "resourceVersion": "393057",
+                        },
+                        "spec": Object {
+                          "gateways": undefined,
+                          "hosts": Array [
+                            "reviews",
+                          ],
+                          "http": Array [
+                            Object {
+                              "route": Array [
+                                Object {
+                                  "destination": Object {
+                                    "host": "reviews",
+                                    "subset": "v1",
+                                  },
+                                },
+                              ],
+                            },
+                          ],
+                          "tcp": undefined,
+                        },
+                      },
+                    ]
+                  }
+                />
+              </WithErrorBoundary>
+              <WithErrorBoundary
+                eventKey="destinationrules"
+                message="One of the Destination Rules associated to this service has an invalid format"
+              >
+                <ServiceInfoDestinationRules
+                  destinationRules={
+                    Array [
+                      Object {
+                        "metadata": Object {
+                          "creationTimestamp": "2018-07-02T13:44:01+02:00",
+                          "name": "reviews",
+                          "resourceVersion": "393061",
+                        },
+                        "spec": Object {
+                          "host": "reviews",
+                          "subsets": Array [
+                            Object {
+                              "labels": Object {
+                                "version": "v1",
+                              },
+                              "name": "v1",
+                            },
+                            Object {
+                              "labels": Object {
+                                "version": "v2",
+                              },
+                              "name": "v2",
+                            },
+                            Object {
+                              "labels": Object {
+                                "version": "v3",
+                              },
+                              "name": "v3",
+                            },
+                          ],
+                          "trafficPolicy": undefined,
+                        },
+                      },
+                    ]
+                  }
+                  validations={
+                    Object {
+                      "reviews": Object {
+                        "checks": Array [
+                          Object {
+                            "message": "This subset is not found from the host",
+                            "path": "spec/subsets[0]/version",
+                            "severity": "error",
+                          },
+                          Object {
+                            "message": "This subset is not found from the host",
+                            "path": "spec/subsets[1]/version",
+                            "severity": "error",
+                          },
+                        ],
+                        "name": "details",
+                        "objectType": "destinationrule",
+                        "valid": false,
+                      },
+                    }
+                  }
+                />
+              </WithErrorBoundary>
+            </TabContent>
+          </div>
+        </Uncontrolled(TabContainer)>
+      </Col>
+    </Row>
+  </div>
+</div>
+`;

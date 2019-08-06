@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Icon is LOCK_FULL MTLSIcon renders properly 1`] = `
+<OverlayTrigger
+  defaultOverlayShown={false}
+  overlay={
+    <Tooltip
+      bsClass="tooltip"
+      id="mtls-status-masthead"
+      placement="right"
+    >
+      Overlay Test
+    </Tooltip>
+  }
+  placement="left"
+  rootClose={false}
+  trigger={
+    Array [
+      "hover",
+      "focus",
+    ]
+  }
+>
+  <img
+    alt="left"
+    className="className"
+    src="mtls-status-full.svg"
+  />
+</OverlayTrigger>
+`;
