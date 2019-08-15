@@ -252,7 +252,6 @@ export class GraphPage extends React.Component<GraphPageProps, GraphPageState> {
   componentDidUpdate(prev: GraphPageProps) {
     // schedule an immediate graph fetch if needed
     const curr = this.props;
-
     const activeNamespacesChanged = !arrayEquals(
       prev.activeNamespaces,
       curr.activeNamespaces,

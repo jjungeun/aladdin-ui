@@ -77,16 +77,6 @@ export class CytoscapeReactWrapper extends React.Component<CytoscapeReactWrapper
    return (
    <>
      <div id="cy" className="graph" style={styleContainer} ref={this.divParentRef} />
-     {/* <MyTable
-       data={this.props.data}
-       namespaces={[]}
-       graphType={this.props.graphType}
-       injectServiceNodes={this.props.injectServiceNodes}
-       queryTime={this.props.queryTime}
-       duration={this.props.duration}
-       step={this.props.step}
-       rateInterval={this.props.rateInterval}
-     /> */}
    </>
    );
  }

@@ -8,8 +8,11 @@ import AppListPage from './pages/AppList/AppListPage';
 import AppDetailsPage from './pages/AppDetails/AppDetailsPage';
 import OverviewPageContainer from './pages/Overview/OverviewPage';
 // aladdin
-import DashboardPageContainer from './pages/DashBoard/DashBoardPage';
-import { MenuItem, Path } from './types/Routes';
+import InfrastructurePageContainer from './pages/Infrastructure/InfrastructurePage';
+import DashboardPageContainer from './pages/Dashboard/DashboardPage';
+import NodesDetailContainer from './pages/Dashboard/NodesDetail';
+import NamespaceDetailContainer from './pages/Dashboard/NamespaceDetail';
+import { MenuItem, Path, GroupId } from './types/Routes';
 import GraphPageContainer from './pages/Graph/GraphPage';
 import { icons, Paths } from './config';
 import ServiceDetailsPageContainer from './pages/ServiceDetails/ServiceDetailsPage';
@@ -26,12 +29,19 @@ const navItems: MenuItem[] = [
     to: '/overview',
     pathsActive: [/^\/overview\/(.*)/]
   },
-  // aladdin
   {
     iconClass: icons.menu.dashboard,
-    title: 'Dashboard',
-    to: '/dashboard',
-    pathsActive: [/^\/dashboard\/(.*)/]
+    title: 'Infrastructure',
+    to: '/' + Paths.INFRASTRUCTURE + '/Overview',
+    pathsActive: [/^\/Infrastructure\/(.*)/],
+    groupId: GroupId.INFRASTRUCTURE
+  },
+  {
+    iconClass: icons.menu.dashboard,
+    title: 'Kubernetes',
+    to: '/' + Paths.KUBERNETES + '/Overview',
+    pathsActive: [new RegExp('^/' + Paths.KUBERNETES + '/(.*)')],
+    groupId: GroupId.KUBERNETES
   },
   {
     iconClass: icons.menu.graph,
@@ -69,6 +79,37 @@ const navItems: MenuItem[] = [
     to: '/jaeger'
   }
 ];
+// aladdin
+const subItems: MenuItem[] = [
+  {
+    iconClass: icons.menu.dashboard,
+    title: 'Overview',
+    to: '/' + Paths.INFRASTRUCTURE + '/Overview',
+    pathsActive: [/^\/Kubernetes\/Overview\/(.*)/],
+    groupId: GroupId.INFRASTRUCTURE
+  },
+  {
+    iconClass: icons.menu.dashboard,
+    title: 'Overview',
+    to: '/' + Paths.KUBERNETES + '/Overview',
+    pathsActive: [/^\/Kubernetes\/Overview\/(.*)/],
+    groupId: GroupId.KUBERNETES
+  },
+  {
+    iconClass: icons.menu.dashboard,
+    title: 'Nodes',
+    to: '/' + Paths.KUBERNETES + '/Nodes',
+    pathsActive: [/^\/Kubernetes\/Nodes\/(.*)/],
+    groupId: GroupId.KUBERNETES
+  },
+  {
+    iconClass: icons.menu.dashboard,
+    title: 'Namespace',
+    to: '/' + Paths.KUBERNETES + '/Namespace',
+    pathsActive: [/^\/Kubernetes\/Namespace\/(.*)/],
+    groupId: GroupId.KUBERNETES
+  },
+];
 
 const defaultRoute = '/overview';
 
@@ -77,9 +118,20 @@ const pathRoutes: Path[] = [
     path: '/overview',
     component: OverviewPageContainer
   },
-  // aladdin
   {
-    path: '/dashboard',
+    path: '/' + Paths.INFRASTRUCTURE,
+    component: InfrastructurePageContainer
+  },
+  {
+    path: '/' + Paths.KUBERNETES + '/nodes',
+    component: NodesDetailContainer
+  },
+  {
+    path: '/' + Paths.KUBERNETES + '/namespace',
+    component: NamespaceDetailContainer
+  },
+  {
+    path: '/' + Paths.KUBERNETES,
     component: DashboardPageContainer
   },
   {
@@ -172,4 +224,4 @@ const secondaryMastheadRoutes: Path[] = [
   }
 ];
 
-export { defaultRoute, navItems, pathRoutes, secondaryMastheadRoutes };
+export { defaultRoute, navItems, subItems, pathRoutes, secondaryMastheadRoutes };

@@ -1,4 +1,5 @@
-import { MetricsQuery, InfraMetricsQuery } from 'k-charted-react';
+import { MetricsQuery } from 'k-charted-react';
+import { InfraMetricsQuery } from '../pages/Dashboard/DashboardCommon'
 
 export interface IstioMetricsOptions extends MetricsQuery {
   direction: Direction;

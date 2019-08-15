@@ -28,7 +28,6 @@ type MyTableState = {
 
 export class MyTablePage extends React.Component<SummaryPanelPropType, MyTableState> {
   private metricsPromise?: CancelablePromise<Response<Metrics>>;
-
   constructor(props: SummaryPanelPropType) {
     super(props);
     this.state = {

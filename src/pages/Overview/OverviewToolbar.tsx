@@ -55,6 +55,7 @@ type State = {
 };
 
 export class OverviewToolbar extends React.Component<Props, State> {
+  
   static currentOverviewType(): OverviewType {
     const otype = HistoryManager.getParam(URLParam.OVERVIEW_TYPE);
     return (otype as OverviewType) || 'app';
@@ -82,7 +83,6 @@ export class OverviewToolbar extends React.Component<Props, State> {
     // ensure redux state and URL are aligned
     HistoryManager.setParam(URLParam.DURATION, String(this.props.duration));
     HistoryManager.setParam(URLParam.POLL_INTERVAL, String(this.props.refreshInterval));
-
     const urlSortField = ListPagesHelper.currentSortField(Sorts.sortFields);
     const urlIsSortAscending = ListPagesHelper.isCurrentSortAscending();
     if (!this.paramsAreSynced(urlSortField, urlIsSortAscending) || this.props.duration !== prevProps.duration) {

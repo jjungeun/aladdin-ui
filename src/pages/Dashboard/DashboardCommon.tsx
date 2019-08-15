@@ -1,8 +1,6 @@
 import * as M from '../../types/Metrics';
-// import { InfraMetrics } from '../../types/Metrics';
 import { Response } from '../../services/Api';
 
-// jungeun
 export const mergeInfraMetricsResponses = (promises: Promise<Response<M.InfraMetrics>>[]): Promise<Response<M.InfraMetrics>> => {
   return Promise.all(promises).then(responses => {
     const metrics: M.InfraMetrics = {
@@ -18,3 +16,10 @@ export const mergeInfraMetricsResponses = (promises: Promise<Response<M.InfraMet
     };
   });
 };
+
+export interface InfraMetricsQuery {
+  rateInterval?: string;
+  rateFunc?: string;
+  avg?: boolean;
+  byLabels?: string[];
+}

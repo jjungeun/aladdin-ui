@@ -2,11 +2,10 @@ import _ from 'lodash';
 import * as React from 'react';
 import { matchPath } from 'react-router';
 import { Link } from 'react-router-dom';
-import { Nav, NavList, NavItem, PageSidebar } from '@patternfly/react-core';
+import { Nav, NavList, NavItem, PageSidebar, NavExpandable } from '@patternfly/react-core';
 import { ExternalLinkAltIcon } from '@patternfly/react-icons';
-
 import history from '../../app/History';
-import { navItems } from '../../routes';
+import { navItems, subItems } from '../../routes';
 
 const ExternalLink = ({ href, name }) => (
   <NavItem isActive={false} key={name}>
@@ -24,6 +23,7 @@ type MenuProps = {
 };
 
 type MenuState = {
+  activeGroup: string;
   activeItem: string;
 };
 
@@ -35,6 +35,7 @@ class Menu extends React.Component<MenuProps, MenuState> {
   constructor(props: MenuProps) {
     super(props);
     this.state = {
+      activeGroup: '',
       activeItem: 'Overview'
     };
   }
@@ -53,15 +54,37 @@ class Menu extends React.Component<MenuProps, MenuState> {
         return <ExternalLink key={item.to} href={this.props.jaegerUrl} name="Distributed Tracing" />;
       }
 
-      return item.title === 'Distributed Tracing' && this.props.jaegerUrl === '' ? (
-        ''
-      ) : (
-        <NavItem isActive={activeItem === item} key={item.to}>
-          <Link id={item.title} to={item.to} onClick={() => history.push(item.to)}>
-            {item.title}
-          </Link>
-        </NavItem>
-      );
+      if (item.title === 'Distributed Tracing' && this.props.jaegerUrl === '') {
+        return '';
+      }
+      // aladdin
+      if (item.groupId && item === activeItem) {
+        return (
+          <NavExpandable title={item.title} groupId={item.groupId} isActive={true} isExpanded={true}>
+            {subItems.map(subitem => {
+              if (subitem.groupId === item.groupId) {
+                return(
+                  <NavItem isActive={subitem.to === location.pathname} key={subitem.to} >
+                    <Link id={subitem.title} to={subitem.to} onClick={() => history.push(subitem.to)}>
+                      {subitem.title}
+                    </Link>
+                  </NavItem>
+                );
+              } else {
+                return undefined;
+              }
+            })};
+          </NavExpandable>
+        );
+      } else {
+        return (
+          <NavItem isActive={activeItem === item} key={item.to}>
+            <Link id={item.title} to={item.to} onClick={() => history.push(item.to)}>
+              {item.title}
+            </Link>
+          </NavItem>
+        );
+      }
     });
   };
 

@@ -3,6 +3,7 @@ export interface MenuItem {
   title: string;
   to: string;
   pathsActive?: RegExp[];
+  groupId?: string;
 }
 
 export interface Path {
@@ -10,8 +11,7 @@ export interface Path {
   component: any;
 }
 
-// jungeun 이런식으로 써도 되는지 다시 보기
-export interface DashboardItem {
-  title: string;
-  kind: string;
+export enum GroupId {
+  INFRASTRUCTURE= '1',
+  KUBERNETES = '2',
 }
